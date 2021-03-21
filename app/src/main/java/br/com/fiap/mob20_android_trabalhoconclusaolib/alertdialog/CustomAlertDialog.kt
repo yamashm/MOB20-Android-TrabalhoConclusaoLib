@@ -94,11 +94,11 @@ class CustomAlertDialog: View.OnClickListener  {
             ivAlertDialogImage.setImageDrawable(bm)
         }
 
-        if(buttonOkClickListener == null){
+        if(buttonOkClickListener != null){
             btAlertDialogOk.setOnClickListener(buttonOkClickListener)
         }
 
-        if(buttonCancelClickListener == null){
+        if(buttonCancelClickListener != null){
             btAlertDialogCancel.setOnClickListener(buttonCancelClickListener)
         }
 
