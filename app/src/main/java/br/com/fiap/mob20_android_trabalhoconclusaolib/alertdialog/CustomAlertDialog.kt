@@ -14,7 +14,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import br.com.fiap.mob20_android_trabalhoconclusaolib.R
 
-class AlertDialog  {
+class CustomAlertDialog  {
 
     private lateinit var ivAlertDialogImage: ImageView
     private lateinit var tvAlertDialogTitle: TextView
