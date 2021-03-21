@@ -9,6 +9,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
@@ -19,6 +20,8 @@ class CustomAlertDialog  {
     private lateinit var ivAlertDialogImage: ImageView
     private lateinit var tvAlertDialogTitle: TextView
     private lateinit var tvAlertDialogMessage: TextView
+    private lateinit var btAlertDialogOk: Button
+    private lateinit var btAlertDialogCancel: Button
 
     private var dialog: Dialog? = null
     private var activity: Activity? = null
@@ -49,7 +52,7 @@ class CustomAlertDialog  {
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog?.setCancelable(isCancelable)
         dialog?.setCanceledOnTouchOutside(false)
-        dialog?.setContentView(R.layout.custom_dialog)
+        dialog?.setContentView(R.layout.custom_alert_dialog)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val lp = WindowManager.LayoutParams()
         lp.copyFrom(dialog?.window?.attributes)
@@ -77,6 +80,14 @@ class CustomAlertDialog  {
         ivAlertDialogImage = dialog?.findViewById(R.id.ivAlertDialogImage) as ImageView
         tvAlertDialogTitle = dialog?.findViewById(R.id.tvAlertDialogTitle) as TextView
         tvAlertDialogMessage = dialog?.findViewById(R.id.tvAlertDialogMessage) as TextView
+        btAlertDialogOk = dialog?.findViewById(R.id.btAlertDialogOk) as Button
+        btAlertDialogCancel = dialog?.findViewById(R.id.btAlertDialogCancel) as Button
+
+        tvAlertDialogTitle.text = title ?: ""
+        tvAlertDialogMessage.text = msg ?: ""
+
+        btAlertDialogOk.text = buttonOkText ?: "Ok"
+        btAlertDialogCancel.text = buttonCancelText ?: "Cancel"
 
         resId?.let {
             val bm = ResourcesCompat.getDrawable(activity.resources, it, null)
@@ -84,11 +95,11 @@ class CustomAlertDialog  {
         }
 
         if(buttonOkClickListener == null){
-
+            btAlertDialogOk.setOnClickListener(buttonOkClickListener)
         }
 
         if(buttonCancelClickListener == null){
-
+            btAlertDialogCancel.setOnClickListener(buttonCancelClickListener)
         }
 
 

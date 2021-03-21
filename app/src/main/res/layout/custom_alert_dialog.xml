@@ -37,13 +37,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btCall"
+            android:id="@+id/btAlertDialogOk"
             android:text="Ok"
             android:layout_marginEnd="5dp"
             style="@style/button_dialog"/>
 
         <Button
-            android:id="@+id/btShare"
+            android:id="@+id/btAlertDialogCancel"
             android:text="Cancel"
             android:layout_marginStart="5dp"
             style="@style/button_dialog"/>
