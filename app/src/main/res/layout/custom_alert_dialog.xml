@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,12 +8,16 @@
     android:background="@drawable/alert_background"
     android:orientation="vertical"
     android:padding="16dp">
-    <ImageView
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/ivAlertDialogImage"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width ="96dp"
+        android:layout_height ="96dp"
+        app:lottie_autoPlay ="true"
+        app:lottie_loop ="true"
         android:layout_gravity="center"
-        tools:src="@mipmap/ic_launcher" />
+        app:lottie_rawRes ="@raw/data"/>
+
     <TextView
         android:layout_marginVertical="8dp"
         android:id="@+id/tvAlertDialogTitle"
@@ -34,6 +39,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
         <Button

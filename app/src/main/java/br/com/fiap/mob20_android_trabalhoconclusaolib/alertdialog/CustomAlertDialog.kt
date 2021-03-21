@@ -14,10 +14,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import br.com.fiap.mob20_android_trabalhoconclusaolib.R
+import com.airbnb.lottie.LottieAnimationView
 
 class CustomAlertDialog: View.OnClickListener  {
 
-    private lateinit var ivAlertDialogImage: ImageView
+    private lateinit var ivAlertDialogImage: LottieAnimationView
     private lateinit var tvAlertDialogTitle: TextView
     private lateinit var tvAlertDialogMessage: TextView
     private lateinit var btAlertDialogOk: Button
@@ -77,14 +78,14 @@ class CustomAlertDialog: View.OnClickListener  {
         }
 
         createDialog(activity, isCancelable)
-        ivAlertDialogImage = dialog?.findViewById(R.id.ivAlertDialogImage) as ImageView
+        ivAlertDialogImage = dialog?.findViewById(R.id.ivAlertDialogImage) as LottieAnimationView
         tvAlertDialogTitle = dialog?.findViewById(R.id.tvAlertDialogTitle) as TextView
         tvAlertDialogMessage = dialog?.findViewById(R.id.tvAlertDialogMessage) as TextView
         btAlertDialogOk = dialog?.findViewById(R.id.btAlertDialogOk) as Button
         btAlertDialogCancel = dialog?.findViewById(R.id.btAlertDialogCancel) as Button
 
-        tvAlertDialogTitle.setTextColor(Color.parseColor("#bdbdbd"))
-        tvAlertDialogMessage.setTextColor(Color.parseColor("#bdbdbd"))
+        //tvAlertDialogTitle.setTextColor(Color.parseColor("#bdbdbd"))
+        //tvAlertDialogMessage.setTextColor(Color.parseColor("#bdbdbd"))
 
         tvAlertDialogTitle.text = title ?: ""
         tvAlertDialogMessage.text = msg ?: ""
@@ -93,8 +94,8 @@ class CustomAlertDialog: View.OnClickListener  {
         btAlertDialogCancel.text = buttonCancelText ?: "Cancel"
 
         resId?.let {
-            val bm = ResourcesCompat.getDrawable(activity.resources, it, null)
-            ivAlertDialogImage.setImageDrawable(bm)
+            //val bm = ResourcesCompat.(activity.resources, it, null)
+            ivAlertDialogImage.setAnimation(it)
         }
 
         if(buttonOkClickListener != null){
