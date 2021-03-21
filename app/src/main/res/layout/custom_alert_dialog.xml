@@ -15,8 +15,7 @@
         android:layout_height ="96dp"
         app:lottie_autoPlay ="true"
         app:lottie_loop ="true"
-        android:layout_gravity="center"
-        app:lottie_rawRes ="@raw/data"/>
+        android:layout_gravity="center" />
 
     <TextView
         android:layout_marginVertical="8dp"
