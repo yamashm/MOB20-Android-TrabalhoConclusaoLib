@@ -15,7 +15,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import br.com.fiap.mob20_android_trabalhoconclusaolib.R
 
-class CustomAlertDialog  {
+class CustomAlertDialog: View.OnClickListener  {
 
     private lateinit var ivAlertDialogImage: ImageView
     private lateinit var tvAlertDialogTitle: TextView
@@ -131,5 +131,17 @@ class CustomAlertDialog  {
         if (activity == null)
             return true
         return activity?.isDestroyed!!
+    }
+
+    override fun onClick(view: View) {
+        if (dialog != null) {
+            dialog?.dismiss()
+            dialog = null
+        }
+
+        fun isShowing(): Boolean? {
+            if (dialog == null) return false
+            return dialog?.isShowing
+        }
     }
 }
