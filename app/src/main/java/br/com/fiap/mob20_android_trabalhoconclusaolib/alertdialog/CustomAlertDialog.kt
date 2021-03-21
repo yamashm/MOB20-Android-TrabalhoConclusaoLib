@@ -84,9 +84,6 @@ class CustomAlertDialog: View.OnClickListener  {
         btAlertDialogOk = dialog?.findViewById(R.id.btAlertDialogOk) as Button
         btAlertDialogCancel = dialog?.findViewById(R.id.btAlertDialogCancel) as Button
 
-        //tvAlertDialogTitle.setTextColor(Color.parseColor("#bdbdbd"))
-        //tvAlertDialogMessage.setTextColor(Color.parseColor("#bdbdbd"))
-
         tvAlertDialogTitle.text = title ?: ""
         tvAlertDialogMessage.text = msg ?: ""
 
@@ -94,7 +91,6 @@ class CustomAlertDialog: View.OnClickListener  {
         btAlertDialogCancel.text = buttonCancelText ?: "Cancel"
 
         resId?.let {
-            //val bm = ResourcesCompat.(activity.resources, it, null)
             ivAlertDialogImage.setAnimation(it)
         }
 
