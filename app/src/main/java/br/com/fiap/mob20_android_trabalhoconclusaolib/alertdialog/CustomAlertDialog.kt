@@ -53,7 +53,7 @@ class CustomAlertDialog: View.OnClickListener  {
         dialog?.setCancelable(isCancelable)
         dialog?.setCanceledOnTouchOutside(false)
         dialog?.setContentView(R.layout.custom_alert_dialog)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.BLACK))
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val lp = WindowManager.LayoutParams()
         lp.copyFrom(dialog?.window?.attributes)
         lp.width = WindowManager.LayoutParams.MATCH_PARENT
