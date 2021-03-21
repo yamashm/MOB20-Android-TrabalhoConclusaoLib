@@ -53,7 +53,7 @@ class CustomAlertDialog: View.OnClickListener  {
         dialog?.setCancelable(isCancelable)
         dialog?.setCanceledOnTouchOutside(false)
         dialog?.setContentView(R.layout.custom_alert_dialog)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.BLACK))
         val lp = WindowManager.LayoutParams()
         lp.copyFrom(dialog?.window?.attributes)
         lp.width = WindowManager.LayoutParams.MATCH_PARENT
@@ -82,6 +82,9 @@ class CustomAlertDialog: View.OnClickListener  {
         tvAlertDialogMessage = dialog?.findViewById(R.id.tvAlertDialogMessage) as TextView
         btAlertDialogOk = dialog?.findViewById(R.id.btAlertDialogOk) as Button
         btAlertDialogCancel = dialog?.findViewById(R.id.btAlertDialogCancel) as Button
+
+        tvAlertDialogTitle.setTextColor(Color.parseColor("#bdbdbd"))
+        tvAlertDialogMessage.setTextColor(Color.parseColor("#bdbdbd"))
 
         tvAlertDialogTitle.text = title ?: ""
         tvAlertDialogMessage.text = msg ?: ""
